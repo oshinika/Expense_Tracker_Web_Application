@@ -1,0 +1,15 @@
+/* Analytics.css */
+.card {
+    margin-bottom: 20px;
+    border:1px solid #32cd32 !important;
+  }
+  
+  .row {
+    justify-content: center;
+  }
+  
+  .card-body {
+    text-align: center;
+    
+  }
+  

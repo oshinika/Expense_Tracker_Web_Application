@@ -1,7 +1,10 @@
 /* Analytics.css */
 .card {
     margin-bottom: 20px;
-    border:1px solid #32cd32 !important;
+    border:2px solid brown !important;
+    margin-top: 20px;
+    border-radius: 20px;
+    background: rgb(243, 241, 241,0.7)
   }
   
   .row {
@@ -13,3 +16,16 @@
     
   }
   
+  .custom-progress .ant-progress-inner {
+    width: 100% !important;
+  }
+  
+  .custom-progress .ant-progress-bg {
+    transition: width 1s ease-in-out;
+  }
+
+  .container{
+    background-color: rgba(17, 16, 16, 0.5);
+    border-radius: 40px;
+    border: solid 2px white;
+  }

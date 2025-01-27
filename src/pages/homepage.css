@@ -1,129 +1,207 @@
-body,HTML{
-  background-image: url('../pages/img.jpg');
-  margin: 0;
-  padding: 0;
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-  font-size: 20px;
-  height: 100%;
-  background-attachment: fixed;
-  
+/* Main Page Layout */
+.page-container {
+  display: flex;
+  min-height: 100vh; /* Ensure full height */
+  flex-direction: row;
+  background-color: #f8f9fa; /* Subtle background for the entire page */
 }
 
-     
+/* Sidebar Section */
+.sidebar {
+  width: 20%; /* Adjust the width as needed */
+  padding: 20px; /* Padding for content inside the sidebar */
+  position: fixed; /* Keep the sidebar fixed on the left */
+  left: 0;
+  top: 0;
+  bottom: 0;
+  background-color: rgba(19, 74, 105, 0.9); /* Slightly darker transparent background */
+  box-shadow: 2px 0 10px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+  border-radius: 0px; /* Rounded edges on the right */
+  display: flex;
+  flex-direction: column; /* Stack elements vertically */
+  justify-content: flex-start; /* Align content to the top */
+  align-items: center;
+  z-index: 100; /* Ensure it's above other content */
+  overflow-y: auto; /* Allow scrolling if content overflows */
+  height: 100%; /* Ensure the sidebar takes full height */
+}
 
-  
-  
-  
-  
-  .filters{
-   
-    display : flex;
-    align-items: center;
-    justify-content:space-between;
-    padding: 10px 50px;
-    border: 2px solid white !important;
-    background-color: rgba(0, 0, 0, 0.7);
-    color: #ffffff;
-    border-radius: 8px;
-    width: 70%;
-    height: 80px;
-    margin-left: 170px;
-    margin-top: -30px;
-    
+/* Sidebar Title */
+.welcome-title {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: white;
+  text-align: center;
+  margin-bottom: 20px;
+  animation: fadeIn 2s ease-in-out; /* Smooth fade-in animation */
+}
 
+/* Fade-in Animation */
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+    transform: translateY(-10px);
   }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
 
- 
-  
-  .switch-icons{
-    border:1px solid solid rgba(255, 182, 193, 0.7);
-    border-radius: 5px;
-    padding: 10px 15px;
-    color: black;
-  }
-  
-  .anticon svg{
-    font-size: 20px;
-    cursor: pointer;
-    color: rgb(231, 187, 195);
-  }
-  
-  .active-icon{
-    color: #32cd32;
-  }
-  .inactive-icon{
-    color: #ffb6c1;
-  }
-  
-  .content {
-    padding-left: 100px;
-    background-color:none;
-    border-radius: 8px;
-    width: 90%;
-    height:100%;
-    font-size: 20px;
-    margin-top:-10px;
-    
+/* Image in the Sidebar */
+.left-image-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  margin-top: 10px; /* Add spacing above the image */
+}
 
-    
-   /* Center the content container */
-  margin-top: 10px;
-  }
-  
-  .btn-primary {
-    background-color: white;
-    border-color: white;
-    color: black;
-    width: 100%;
-    max-width: 1200px; /* Center the content container */
-    margin-top: -2px;
-    border-radius: 20px;
-  }
-   .btn-primary:hover{
-    background-color: brown;
-    border-color: white;
-   }
-  
-  .table {
-    
-    color: #ffffff;
-    height: 100%;
-    margin-top:-10px;
-    font-size: 20px;
-    
-    
-    
-  }
-  
-  .table th,
-  .table td {
-    border: 1px solid #2f040c !important;
-    color: #ffffff !important;
-    background-color: rgba(0, 0, 0, 0.7)
-    
-  }
-  
-  .ant-table-thead > tr > th {
-    background-color:rgba(255, 255, 255, 0.1);
-    color: black !important;
-    border: 1px solid brown !important;
-  }
-  
-  .ant-table-tbody > tr > td {
-    background-color: rgba(110, 103, 103, 0.01);
-    color: black !important;
-    border: 1px solid brown !important;
-  }
-  
-  
-  .modal-content {
-    
-    color: black;
+.left-image {
+  width: 90%; /* Slight padding around the image */
+  height: 180px; /* Maintain aspect ratio */
+  object-fit: cover; /* Ensure the image fills the container nicely */
+  border-radius: 8px; /* Rounded edges for the image */
+}
 
-    
+/* Main Content Section */
+.main-content {
+  margin-left: 20%; /* Offset to account for the sidebar */
+  width: 80%; /* Adjust the width for better spacing */
+  padding: 20px;
+  background-color: rgb(213, 235, 245); /* Light background for contrast */
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+  border-radius: 8px; /* Rounded corners */
+  height: 100%; /* Ensure the main content takes full height */
+  overflow-y: auto; /* Allow scrolling */
+}
+
+/* Filters Section */
+.filters {
+  display: flex;
+  flex-wrap: wrap; /* Allow filters to wrap on smaller screens */
+  align-items: center;
+  justify-content: space-between; /* Distribute items evenly */
+  padding: 10px 20px; /* Adjust padding for consistent spacing */
+  border: 2px solid rgba(68, 144, 249, 0.7); /* Softer border */
+  background-color: rgba(174, 224, 254, 0.9); /* Slightly darker for contrast */
+  color: #090808; /* Dark text for readability */
+  border-radius: 8px;
+  width: 100%; /* Full width inside its container */
+  max-width: 900px; /* Limit the width for larger screens */
+  height: auto; /* Allow dynamic height based on content */
+  margin: 20px auto; /* Center the filters horizontally */
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+}
+
+/* Table Styles */
+.table {
+  width: 100%; /* Full width for the table */
+  border-collapse: collapse; /* Remove gaps between table cells */
+}
+
+.table th,
+.table td {
+  padding: 12px;
+  text-align: left;
+  border-bottom: 1px solid #ddd; /* Light border for rows */
+}
+
+/* Alternating Row Colors */
+.table tr:nth-child(even) {
+  background-color: #d5e9f4; /* Light gray for even rows */
+}
+
+.table tr:nth-child(odd) {
+  background-color: #a5d3fb; /* White for odd rows */
+}
+
+.table th {
+  background-color: #0f0f10; /* Blue background for headers */
+  color: white; /* White text for headers */
+}
+
+.table tr:hover {
+  background-color: #bfd6f7; /* Light hover effect */
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+  .sidebar {
+    width: 100%; /* Sidebar takes full width on small screens */
+    position: relative; /* No fixed positioning */
+    border-radius: 0; /* Remove rounded edges */
+    box-shadow: none; /* Remove shadow */
+    margin-bottom: 20px; /* Add space below */
   }
 
+  .main-content {
+    margin-left: 0; /* Remove left margin */
+    width: 100%; /* Full width for main content */
+  }
 
-  
+  .filters {
+    flex-direction: column; /* Stack filter elements vertically */
+    padding: 15px; /* Increase padding for better spacing */
+  }
+
+  .left-image {
+    width: 100%; /* Image takes up full width on smaller screens */
+  }
+
+  .welcome-title {
+    font-size: 1.2rem; /* Adjust font size for smaller screens */
+  }
+}
+
+/* Adjustments for Large Screens */
+@media (min-width: 1200px) {
+  .sidebar {
+    width: 18%; /* Narrower sidebar on larger screens */
+  }
+
+  .main-content {
+    margin-left: 18%; /* Adjust margin for the narrower sidebar */
+    width: 82%; /* Adjust main content width */
+  }
+}
+
+/* Custom Styles for Modal and Add New Form */
+.modal-form {
+  background-color: #ffffff; /* White background for the form */
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+}
+
+.modal-form input,
+.modal-form select {
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  width: 100%; /* Full width of the input fields */
+  margin-bottom: 15px;
+}
+
+.modal-form button {
+  background-color: #4CAF50; /* Green background for Save button */
+  color: white;
+  padding: 10px 15px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  width: 100%; /* Full width of the button */
+}
+
+.modal-form button:hover {
+  background-color: #45a049; /* Darker green on hover */
+}
+
+/* Modal Title */
+.modal-title {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #333;
+  text-align: center;
+  margin-bottom: 20px;
+}

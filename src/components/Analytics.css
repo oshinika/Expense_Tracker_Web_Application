@@ -4,7 +4,7 @@
     border:2px solid brown !important;
     margin-top: 20px;
     border-radius: 20px;
-    background: rgb(243, 241, 241,0.7)
+    background: rgb(213, 235, 245)
   }
   
   .row {
@@ -25,7 +25,7 @@
   }
 
   .container{
-    background-color: rgba(17, 16, 16, 0.5);
-    border-radius: 40px;
-    border: solid 2px white;
+    background-color: rgb(213, 235, 245);
+    border-radius: 0px;
+  
   }

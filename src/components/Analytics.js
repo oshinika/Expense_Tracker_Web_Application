@@ -82,7 +82,7 @@ const Analytics = ({ allTransection }) => {
 
       <div className='row mt-3 justify-content-center'>
         <div className='col-md-4 mb-4'>
-          <h4 style={{ color: 'white' }}>Income Categories</h4>
+          <h4 style={{ color: 'green' }}>Income Categories</h4>
           {categories.map(category => {
             const amount = allTransection.filter((transaction) => transaction.type === 'income' && transaction.category === category).reduce((acc, transaction) => acc + transaction.amount, 0);
             return (
@@ -100,7 +100,7 @@ const Analytics = ({ allTransection }) => {
         </div>
 
         <div className='col-md-4 mb-4'>
-          <h4 style={{ color: 'white' }}>Expense Categories</h4>
+          <h4 style={{ color: 'Red' }}>Expense Categories</h4>
           {categories.map(category => {
             const amount = allTransection.filter((transaction) => transaction.type === 'expense' && transaction.category === category).reduce((acc, transaction) => acc + transaction.amount, 0);
             return (
